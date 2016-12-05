@@ -1,0 +1,11 @@
+{
+    "name": "primalbase/view-builder",
+    "description": "View Builder",
+    "author": "Hiroshi Kawai <kawai@primalbase.jp>",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Primalbase\\ViewBuilder\\": "src/"
+        }
+    }
+}
