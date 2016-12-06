@@ -16,7 +16,7 @@ class MakeView extends CommandBase
    *
    * @var string
    */
-  protected $description = 'Generate views uses DreamWeaver Templates.';
+  protected $description = 'Generate view uses DreamWeaver Template.';
 
   /**
    * Create a new command instance.

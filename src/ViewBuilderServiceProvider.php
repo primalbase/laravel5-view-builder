@@ -1,14 +1,20 @@
 <?php namespace Primalbase\ViewBuilder;
 
 use Illuminate\Support\ServiceProvider;
+use Primalbase\ViewBuilder\Console\Commands\MakeLayout;
+use Primalbase\ViewBuilder\Console\Commands\MakeView;
+use Primalbase\ViewBuilder\Console\Commands\UpdateLayout;
+use Primalbase\ViewBuilder\Console\Commands\UpdateView;
 
 class ViewBuilderServiceProvider extends ServiceProvider
 {
   protected $defer = false;
 
   protected $commands = [
-    \Primalbase\ViewBuilder\Console\Commands\MakeLayout::class,
-    \Primalbase\ViewBuilder\Console\Commands\MakeView::class,
+    MakeLayout::class,
+    MakeView::class,
+    UpdateLayout::class,
+    UpdateView::class,
   ];
 
   /**
