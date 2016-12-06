@@ -345,6 +345,12 @@ __BLADE__;
     if (strpos($path, '#') === 0)
       return $path;
 
+    if (strpos($path, 'tel:') === 0)
+      return $path;
+
+    if (strpos($path, 'mailto:') === 0)
+      return $path;
+
     $hash = '';
     if ($index = strpos($path, '#') !== false)
     {
