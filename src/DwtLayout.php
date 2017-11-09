@@ -352,10 +352,10 @@ __BLADE__;
       return $path;
 
     $hash = '';
-    if ($index = strpos($path, '#') !== false)
+    if (($index = strpos($path, '#')) !== false)
     {
-      $path = substr($path, 0, $index);
       $hash = substr($path, $index);
+      $path = substr($path, 0, $index);
     }
 
     if (strpos($path, '/') === 0)
