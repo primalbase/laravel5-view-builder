@@ -1,7 +1,13 @@
 {
     "name": "primalbase/view-builder",
     "description": "View Builder",
-    "author": "Hiroshi Kawai <kawai@primalbase.jp>",
+    "license": "BSD-2-Clause-FreeBSD",
+    "authors": [
+      {
+        "name": "Hiroshi Kawai",
+        "email": "kawai@primalbase.jp"
+      }
+    ],
     "require": {},
     "autoload": {
         "psr-4": {

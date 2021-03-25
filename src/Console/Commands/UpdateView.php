@@ -33,6 +33,7 @@ class UpdateView extends CommandBase
    */
   public function handle()
   {
+    $documentRoot = array_get($this->getConfig(), 'documentRoot', public_path());
     $views = array_get($this->getConfig(), 'views', []);
     foreach ($views as $source => $options)
     {
@@ -47,6 +48,7 @@ class UpdateView extends CommandBase
         '--layout' => $layout,
         '--engine' => $engine,
         '--no-base' => $noBase,
+        '--document-root' => $documentRoot,
       ]);
     }
   }

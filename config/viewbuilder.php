@@ -3,6 +3,7 @@ return [
   'dwt' => [
     'templates_dir' => 'Templates',
   ],
+  'documentRoot' => public_path(),
   'layouts' => [
     'main.dwt' => 'layout.main',
     'mainMember.dwt' => 'layout.member',

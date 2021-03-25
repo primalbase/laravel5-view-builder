@@ -33,6 +33,7 @@ class UpdateLayout extends CommandBase
    */
   public function handle()
   {
+    $documentRoot = array_get($this->getConfig(), 'documentRoot', public_path());
     $layouts = array_get($this->getConfig(), 'layouts', []);
     foreach ($layouts as $source => $options)
     {
@@ -45,6 +46,7 @@ class UpdateLayout extends CommandBase
         '--layout' => $layout,
         '--engine' => $engine,
         '--no-base' => $noBase,
+        '--document-root' => $documentRoot,
       ]);
     }
   }

@@ -9,7 +9,7 @@ class MakeLayout extends CommandBase
    *
    * @var string
    */
-  protected $signature = 'make:layout {--source=main.dwt} {--layout=layout.main} {--engine=blade} {--no-base}';
+  protected $signature = 'make:layout {--source=main.dwt} {--layout=layout.main} {--engine=blade} {--no-base} {--document-root=}';
 
   /**
    * The console command description.
@@ -39,13 +39,13 @@ class MakeLayout extends CommandBase
     $layout = $this->option('layout');
     $engine = $this->option('engine');
     $makeBase = !$this->option('no-base');
-    $documentRoot = public_path(); // @todo public以外の場合も考慮する
+    $documentRoot = $this->option('document-root', public_path());
 
     $viewPath = $this->getViewPath($layout, $makeBase);
     if (!$viewPath)
       return;
 
-    $sourcePath = $this->getSourcePath($source);
+    $sourcePath = $this->getSourcePath($source, true, $documentRoot);
     if (!$sourcePath)
       return;
 

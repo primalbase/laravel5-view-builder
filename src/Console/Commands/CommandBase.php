@@ -31,8 +31,12 @@ class CommandBase extends Command {
     return config('viewbuilder');
   }
 
-  public function getSourcePath($source, $layout = true)
+  public function getSourcePath($source, $layout = true, $documentRoot = null)
   {
+    if (is_null($documentRoot))
+    {
+      $documentRoot = public_path();
+    }
     if ($layout)
     {
       $config = $this->getConfig();
@@ -44,9 +48,9 @@ class CommandBase extends Command {
       $sourcePath = $source;
     }
 
-    if (!file_exists(public_path($sourcePath)))
+    if (!file_exists($documentRoot.'/'.$sourcePath))
     {
-      $this->error(public_path($sourcePath).' file not found.');
+      $this->error($documentRoot.'/'.$sourcePath.' file not found.');
       return false;
     }
 

@@ -9,7 +9,7 @@ class MakeView extends CommandBase
    *
    * @var string
    */
-  protected $signature = 'make:view {source} {view} {--layout=} {--engine=} {--no-base}';
+  protected $signature = 'make:view {source} {view} {--layout=} {--engine=} {--no-base} {--document-root=}';
 
   /**
    * The console command description.
@@ -40,13 +40,13 @@ class MakeView extends CommandBase
     $layout = $this->option('layout');
     $engine = $this->option('engine');
     $makeBase = !$this->option('no-base');
-    $documentRoot = public_path(); // @todo public以外の場合も考慮する
+    $documentRoot = $this->option('document-root', public_path());
 
     $viewPath = $this->getViewPath($view, $makeBase);
     if (!$viewPath)
       return;
 
-    $sourcePath = $this->getSourcePath($source, false);
+    $sourcePath = $this->getSourcePath($source, false, $documentRoot);
     if (!$sourcePath)
       return;
 
