@@ -13,5 +13,13 @@
         "psr-4": {
             "Primalbase\\ViewBuilder\\": "src/"
         }
-    }
+    },
+    "extra": {
+      "laravel": {
+          "providers": [
+              "Primalbase\\ViewBuilder\\ViewBuilderServiceProvider"
+          ],
+          "aliases": {}
+      }
+  }
 }
